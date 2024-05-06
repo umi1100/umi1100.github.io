@@ -3,7 +3,6 @@ name: Deploy site
 on:
   push:
     branches:
-      - master
       - uni-corner
     paths:
       - "assets/**"
@@ -27,7 +26,6 @@ on:
       - "!README.md"
   pull_request:
     branches:
-      - master
       - uni-corner
     paths:
       - "assets/**"
