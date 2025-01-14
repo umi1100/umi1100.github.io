@@ -1,6 +1,7 @@
 ---
 layout: page
-title: news
+title: Inspirations 
+nav: true
 permalink: /news/
 ---
 

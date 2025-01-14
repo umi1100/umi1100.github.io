@@ -2,8 +2,7 @@
 layout: about
 title: home 
 permalink: /
-subtitle:
-
+subtitle: 
 profile:
   # align: right
   # image: prof_pic.jpg
@@ -13,8 +12,9 @@ profile:
   #   <p>123 your address street</p>
   #   <p>Your City, State 12345</p>
 
-news: false # includes a list of news items
+news: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
+I am just Umi, a mother of two kids, who wants to take a better care of her family but still wants to feel connected. That is the reason I created this blog to document my learning through inspirations. 
 
