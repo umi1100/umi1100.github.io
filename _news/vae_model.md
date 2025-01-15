@@ -4,7 +4,7 @@ title: Variational Autoencoder (VAE) Model - A Simplified Math Elaboration for V
 date: 2025-01-13 13:02:00-0400
 inline: false
 related_posts: false
-disqus_comments: false 
+giscus_comments: true 
 
 ---
 
