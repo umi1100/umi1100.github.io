@@ -16,5 +16,5 @@ news: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true# includes social icons at the bottom of the page
 ---
-I am just Umi, a mother of two kids, who wants to take a better care of her family but still wants to feel connected. That is the reason I created this blog to document my learning through inspirations. You can contact me at contact.sopwilai@gmail.com 
+I am just Umi, a mother of two kids, who wants to take a better care of her family but still wants to feel connected. That is the reason I created this blog to document my learning through inspirations. You can contact me at hi.sopwilai@gmail.com 
 
