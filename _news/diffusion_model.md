@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Diffusion Model - A Math-based Simplified Understanding 
-date: 2025-01-14 19:02:00-0400
+date: 2025-03-24 12:02:00-0400
 inline: false
 related_posts: true 
 
