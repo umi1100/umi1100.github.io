@@ -183,7 +183,7 @@ p_\theta(x_{t}|x_{t+1})
 $$. 
 From the density function of $$q(x_t|x_{t+1}, x_0)$$ derived above, we can try to predict $$\tilde\mu =  \frac{1}{\sqrt{\alpha_{t+1}}}(x_{t+1}- \frac{1-\alpha_{t+1}}{\sqrt{1-\bar\alpha_{t+1}}}\epsilon_{t+1}) $$. Because $$x_{t+1}$$ is provided as input in the reverse process, we can parameterize the network to predict $$\epsilon_{t+1}$$ and $$p_\theta(x_t|x_{t+1}) \sim N(x_t; \frac{1}{\sqrt{\alpha_{t+1}}}(x_{t+1}- \frac{1-\alpha_{t+1}}{\sqrt{1-\bar\alpha_{t+1}}}\epsilon_{\theta}(x_{t+1}, t)), \Sigma_\theta(x_{t+1},t))$$
 
-The KL divergence between $$q(x_t|x_{t+1}, x_0)$$ and $$p_\theta(x_{t}|x_{t+1})$$ is then the difference between 
+The KL divergence between $$q(x_t|x_{t+1}, x_0)$$ and $$p_\theta(x_{t}|x_{t+1})$$ is the difference between 
  two mean $$\tilde\mu$$ and $$\mu_\theta$$
 
 $$
