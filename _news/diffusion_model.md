@@ -33,10 +33,17 @@ $$
 \end{aligned}
 $$
 
->* (1*): the conditional probability of $$x_t$$ given $$x_{t-1}$$ ($$q(x_t\|x_{t-1})$$) follows a Gaussian distribution with mean $$\sqrt{1-\beta_t}x_{t-1}$$ and variance $$\beta_tI$$ ($$I$$ is an identity matrix), from which we can sample $$x_t$$ given $$x_{t-1}$$.
+>* (1*): the conditional probability of $$x_t$$ given $$x_{t-1}$$ (
+$$
+q(x_t|x_{t-1})
+$$
+) follows a Gaussian distribution with mean $$\sqrt{1-\beta_t}x_{t-1}$$ and variance $$\beta_tI$$ ($$I$$ is an identity matrix), from which we can sample $$x_t$$ given $$x_{t-1}$$.
 >* (2*): T should be sufficiently large so that the final generated sample x_T of the diffusion process is close to Gaussian noise with mean of 0 and unit variance (denoted by $$I$$ because the data is usually high-dimensional).
 
-After T time steps, for each sample $$x_0$$, we have a sequence of T noisy samples $$x_1, x_2,...,x_T$$. The joint distribution conditioned on x_0 is $$q(x_{1:T}\|x_0) = \prod_{t=1}^{T}q(x_t\|x_{t-1})$$
+After T time steps, for each sample $$x_0$$, we have a sequence of T noisy samples $$x_1, x_2,...,x_T$$. The joint distribution conditioned on x_0 is 
+$$
+q(x_{1:T}|x_0) = \prod_{t=1}^{T}q(x_t|x_{t-1})
+$$
 
 This sampling process is stochastic, we can't backprograte the gradient for model training. Applying the reparameterization trick as in VAE, we have:
 
@@ -58,12 +65,39 @@ $$
 
 >* (3*) Combining two Gaussian distributions: $$\epsilon_{t-2} \sim N(0, \alpha_t(1-\alpha_{t-1})I)$$ and $$\epsilon_{t-1} \sim N(0, (1-\alpha_t)I)$$. The merged distribution is also Gaussian with  mean of 0 and variance of the sum of two individual variances: $$\bar \epsilon_{t-2} \sim N(0, (1-\alpha_t + \alpha_t-\alpha_t\alpha_{t-1})I$$
 
-From Eq.(4*), we can sample any ($$x_t$$) directly from $$x_0$$: $$q(x_t|x_0) \sim N(x_t; \sqrt{\bar\alpha_t}x_0, \sqrt{1-\bar\alpha_t}I)$$
+From Eq.(4*), we can sample any ($$x_t$$) directly from $$x_0$$:
+$$
+q(x_t|x_0) \sim N(x_t; \sqrt{\bar\alpha_t}x_0, \sqrt{1-\bar\alpha_t}I)
+$$
 ## Reverse/Denoising Diffusion Process
 
-In the reverse process, DDPM tries to recover $$x_0$$ from $$x_T$$ by approximating the posterior probability $$q(x_{t-1}\|x_{t}$$ to reverse the diffusion process $$q(x_t\|x_{t-1})$$. However, it's very challenging to approximate $$q(x_{t-1}\|x_{t}$$ directly because we need the entire training dataset. We only know that $$q(x_{t-1}\|x_{t}$$ also follows Gaussion distribution because the noise added at each time step t $$\beta_t$$ is small. 
+In the reverse process, DDPM tries to recover $$x_0$$ from $$x_T$$ by approximating the posterior probability 
+$$
+q(x_{t-1}|x_{t})
+$$ 
+to reverse the diffusion process 
+$$
+q(x_t|x_{t-1})
+$$
+. However, it's very challenging to approximate 
+$$
+q(x_{t-1}|x_{t})
+$$ 
+directly because we need the entire training dataset. We only know that 
+$$
+q(x_{t-1}|x_{t}
+$$ 
+also follows Gaussion distribution because the noise added at each time step t $$\beta_t$$ is small. 
 
-DDPM instead trains a model (parameterized by $$\theta$$) to estimate $$q(x_{t-1}\|x_t)$$, says $$p_\theta(x_{t-1}\|x_t)$$.
+DDPM instead trains a model (parameterized by $$\theta$$) to estimate 
+$$
+q(x_{t-1}\|x_t)
+$$
+, says 
+$$
+p_\theta(x_{t-1}\|x_t)
+$$
+.
 
 $$
 \begin{aligned}
@@ -117,9 +151,21 @@ $$
 \end{aligned}
 $$
 
-According to the forward process, $$x_T$$ is a Gaussian noise and can be computed directly from $$x_0$$. Hence, $$q(x_T\|x_0)$$ does not have trainable parameters and can be ignored. $$L_0$$ can be optimized by a decoder with input $$x_1$$ and output $$x_0$$. We only need to focus on $$L_t$$ 
+According to the forward process, $$x_T$$ is a Gaussian noise and can be computed directly from $$x_0$$. Hence, 
+$$
+q(x_T|x_0)
+$$ 
+does not have trainable parameters and can be ignored. $$L_0$$ can be optimized by a decoder with input $$x_1$$ and output $$x_0$$. We only need to focus on $$L_t$$ 
 
-$$L_t$$ compares two Guassions $$p_\theta$$ and $$q$$. It's notable that $$q(x_t\|x_{t+1}, x_0)$$ is tractable and we can derive the Gaussion function for $$q(x_t\|x_{t+1}, x_0) \sim N(x_t; \tilde \mu(x_{t+1}, x_0), \tilde \beta_{t+1}I)$$, from which we can modify L_t for a more stable training. Let us delve into this derivation. 
+$$L_t$$ compares two Guassions $$p_\theta$$ and $$q$$. It's notable that 
+$$
+q(x_t|x_{t+1}, x_0)
+$$ 
+is tractable and we can derive the Gaussion function for 
+$$
+q(x_t|x_{t+1}, x_0) \sim N(x_t; \tilde \mu(x_{t+1}, x_0), \tilde \beta_{t+1}I)
+$$
+, from which we can modify L_t for a more stable training. Let us delve into this derivation. 
 
 According to Bayes's rule,
 
