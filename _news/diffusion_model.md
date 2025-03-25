@@ -4,7 +4,7 @@ title: Diffusion Model - A Math-based Simplified Understanding
 date: 2025-03-24 12:02:00-0400
 inline: false
 related_posts: true 
-
+giscus_comments: true
 ---
 
 It took me quite some time to comprehend the denoising process of DDPM (Denoising Diffusion Probabilistic Model), one of the most basic variant of diffusion models. In this post, I will elaborate the math behind deriving the objective of DDPM training. I think this math understanding will faciliate the adaptation of other DM variants.  
