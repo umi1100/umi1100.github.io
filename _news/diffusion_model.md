@@ -88,7 +88,6 @@ $$
 q(x_{t-1}|x_{t}
 $$ 
 also follows Gaussion distribution because the noise added at each time step t $$\beta_t$$ is small. 
-
 DDPM instead trains a model (parameterized by $$\theta$$) to estimate 
 $$
 q(x_{t-1}\|x_t)
@@ -238,6 +237,8 @@ L_t &= D_{KL}(q(x_t|x_{t+1}, x_0)|p_\theta(x_{t}|x_{t+1})) \\
 & = E_{x_0, \epsilon}(\frac{1}{2\|\Sigma_\theta(x_{t+1}, t)\|_2^2}\|(\tilde\mu_t(x_{t+1}, x_0)-\mu_\theta(x_{t+1}, t))\|^2\\
 &=E_{x_0, \epsilon}(\frac{1}{2\|\Sigma_\theta\|_2^2}\|(\frac{1}{\sqrt{\alpha_{t+1}}}(x_{t+1}- \frac{1-\alpha_{t+1}}{\sqrt{1-\bar\alpha_{t+1}}}\epsilon_{t+1})-\frac{1}{\sqrt{\alpha_{t+1}}}(x_{t+1}- \frac{1-\alpha_{t+1}}{\sqrt{1-\bar\alpha_{t+1}}}\epsilon_{\theta}(x_{t+1}, t))\|^2\\
 &=E_{x_0, \epsilon}(\frac{1-\alpha_{t+1}}{2\alpha_{t+1}\|\Sigma_\theta\|_2^2(1-\bar\alpha_{t+1})}\|\epsilon_{t+1}-\epsilon_{\theta}(x_{t+1}, t)\|^2\\
+&=E_{x_0, \epsilon}(\frac{1-\alpha_{t+1}}{2\alpha_{t+1}\|\Sigma_\theta\|_2^2(1-\bar\alpha_{t+1})}\|\epsilon_{t+1}-\epsilon_{\theta}(\sqrt{\bar\alpha_{t+1}}x_0 + \sqrt{1-\bar\alpha_{t+1}}\epsilon_{t+1}, t)\|^2\\
+
 \end{aligned}
 $$
  
