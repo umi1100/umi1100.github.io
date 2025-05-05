@@ -9,7 +9,7 @@ giscus_comments: true
 
 It took me quite some time to comprehend the denoising process of DDPM (Denoising Diffusion Probabilistic Model), one of the most basic variant of diffusion models. In this post, I will elaborate the math behind deriving the objective of DDPM training. I think this math understanding will faciliate the adaptation of other DM variants.  
 
-As usual, before delving into DDPM, I would like to recommend amazing knowledge sources that helped deepen my understanding. 
+As usual, before delving into DDPM, I would like to recommend amazing knowledge sources that helped deepen my understanding. Also, I highly recommend [my post about Variational Autoencode (VAE)](https://umi1100.github.io/news/vae_model/) if you are not familiar with it before diving into diffusion model
 
 * [Original Diffusion model](https://arxiv.org/pdf/1503.03585) 
 * [DDPM paper](https://arxiv.org/pdf/2006.11239)
