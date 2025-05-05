@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Score-based Generative Models, Part 1 - Score Matching
+title: Score-based Generative Models, Part 1 Score Matching
 date: 2025-04-29 16:02:00-0400
 inline: false
 related_posts: true 
