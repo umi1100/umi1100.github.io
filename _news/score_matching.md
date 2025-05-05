@@ -60,7 +60,7 @@ $$
 \end{aligned}
 $$
 
-Applying $$u(x)$$ to $$p_{data}(x)$$ and $$v(x)$$ to $$s_\theta(x)$$. Also, without loosing the generality for simplicity, let us consider only 1 dimension of $$x$$ , say $$x_1$$, and fix the other dimensions. If $$a \to -\infty$$ and $$b \to \infty$$, and if we assume the derivative of $$log(p_{data}(x))$$ approaches zero at infinity, we have $$\lim_{a\to -\infty, b\to\infty}[p_{data}(b, x_2, x_3...)s_\theta(b, x_2, x_3,...) - p_{data}(a, x_2, x_3...)s_\theta(a, x_2, x_3,...)] = 0$$. This assumption is necessary in score matching to ensure the stability of the model. If this assumption holds, we will have
+Applying $$p_{data}(x)$$ to $$u(x)$$ and $$s_\theta(x)$$ to $$v(x)$$. Also, without loosing the generality for simplicity, let us consider only 1 dimension of $$x$$ , say $$x_1$$, and fix the other dimensions. If $$a \to -\infty$$ and $$b \to \infty$$, and if we assume the derivative of $$log(p_{data}(x))$$ approaches zero at infinity, we have $$\lim_{a\to -\infty, b\to\infty}[p_{data}(b, x_2, x_3...)s_\theta(b, x_2, x_3,...) - p_{data}(a, x_2, x_3...)s_\theta(a, x_2, x_3,...)] = 0$$. This assumption is necessary in score matching to ensure the stability of the model. If this assumption holds, we will have
 
 $$
 \begin{aligned}
