@@ -172,9 +172,9 @@ collections:
       layout: post
     output: true
     permalink: /news/:path/
-  projects:
+  hobbies:
     output: true
-    permalink: /projects/:path/
+    permalink: /hobbies/:path/
 
 announcements:
   enabled: true
