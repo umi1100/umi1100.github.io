@@ -23,10 +23,10 @@ However, what I did not know was the trailhead is actually not the bottom of Mt 
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/img8597.heic" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/img8597.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/img0103.heic" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/img0103.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -38,7 +38,7 @@ Looking down the path we had just been through, trying to spot the carpark where
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/img8734.heic" title="Looking down the trail head from The bottom of Mount Dana" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/img8734.jpg" title="Looking down the trail head from The bottom of Mount Dana" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/img8766.jpg" title="The view at the bottom of Mount Dana" class="img-fluid rounded z-depth-1" %}
