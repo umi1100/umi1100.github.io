@@ -18,7 +18,7 @@ social: true# includes social icons at the bottom of the page
 ---
 <p><strong>Welcome to Sopwil AI Consulting</strong></p>
 
-<p>I hold a Ph.D. in Computer Science and previously engineered advanced machine learning systems in Big Tech. Today, as the founder of Sopwill AI Ltd., I dedicate my expertise to shaping the next generation of engineers, researchers, and rigorous thinkers.</p>
+<p>I hold a Ph.D. in Computer Science. After more than 10 years engineering software and advanced machine learning systems in Starup and Big Tech companies, I founded Sopwill AI Ltd. to dedicate my expertise to shaping the next generation of engineers, researchers, and rigorous thinkers.</p>
 
 <p>My mentoring philosophy is built on the belief that true academic excellence comes from deep problem-solving, not just memorization. I provide highly specialized, intensive coaching for ambitious students aiming to master advanced STEM concepts, and excel in elite competitions.</p>
 
@@ -31,4 +31,4 @@ social: true# includes social icons at the bottom of the page
 <li><strong>College Admissions Advising:</strong> Strategic essay and application development for highly selective STEM programs.</li>
 </ul>
 
-<p>To inquire about availability for private mentoring or consulting, please contact me at <a href="mailto:hi.sopwilai@gmail.com">hi.sopwilai@gmail.com</a>.</p>
+<p>To inquire about availability for private mentoring or consulting, please contact me at <a href="mailto:hi.sopwilai@gmail.com">contact.sopwilai@gmail.com</a>.</p>
